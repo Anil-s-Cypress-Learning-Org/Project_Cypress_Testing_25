@@ -1,0 +1,36 @@
+{
+    "productDeatails": [
+        {
+            "Brocolli": "120",
+            "Cauliflower": "60",
+            "Cucumber": "48",
+            "Beetroot": "32",
+            "Carrot": "56",
+            "Tomato": "16",
+            "Beans": "82",
+            "Brinjal": "35",
+            "Capsicum": "60",
+            "Mushroom": "75",
+            "Potato": "22",
+            "Pumpkin": "48",
+            "Corn": "75",
+            "Onion": "16",
+            "Apple": "72",
+            "Banana": "45",
+            "Grapes": "60",
+            "Mango": "75",
+            "Musk Melon": "36",
+            "Orange": "75",
+            "Pears": "69",
+            "Pomegranate": "95",
+            "Raspberry": "160",
+            "Strawberry": "180",
+            "Water Melon": "28",
+            "Almonds": "200",
+            "Pista": "190",
+            "Nuts Mixture": "950",
+            "Cashews": "650",
+            "Walnuts": "170"
+        }
+    ]
+}
