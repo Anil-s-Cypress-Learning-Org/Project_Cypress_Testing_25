@@ -1,0 +1,1 @@
+let greet = "Hello All Welcome to learn Java script";
