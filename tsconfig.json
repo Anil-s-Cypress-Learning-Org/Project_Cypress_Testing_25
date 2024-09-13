@@ -5,6 +5,7 @@
         "skipLibCheck": true,
         "module": "ESNext",
         "target": "es5",
+        "strict": false,
         "lib": [
             "dom"
         ],
