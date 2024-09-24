@@ -9,7 +9,7 @@ describe('Rahul-Shetty Test for learn .each & as & jquery', () => {
     it('.each Test in Cypress ittreat every Elemnt', () => {
         cy.GlobalSeasrch('ca')
 
-        cy.get('.products .product').eq(2).contains('ADD TO CART').click();
+        // cy.get('.products .product').eq(2).contains('ADD TO CART').click();
 
         cy.get('[class="products"]:visible').find('.product').each(($el) => {
             const textVeg = $el.find('h4.product-name').text()
