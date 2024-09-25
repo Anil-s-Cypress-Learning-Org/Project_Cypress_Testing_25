@@ -7,7 +7,7 @@ describe('Rahul-Shetty Test for learn .each & as & jquery', () => {
 
 
     it('.each Test in Cypress ittreat every Elemnt', () => {
-        cy.GlobalSeasrch('ca')
+        cy.GrrenKart_GlobalSeasrch('ca')
 
         // cy.get('.products .product').eq(2).contains('ADD TO CART').click();
 
@@ -36,8 +36,8 @@ describe('Rahul-Shetty Test for learn .each & as & jquery', () => {
     });
 
     it('Test', () => {
-        cy.GlobalSeasrch('Carrot');
-        cy.AddToCart('increse');
+        cy.GrrenKart_GlobalSeasrch('Carrot');
+        cy.GrrenKart_AddToCart('increse');
         cy.get('[class="cart-icon"]').click();
         cy.contains('PROCEED TO CHECKOUT').click();
         cy.wait(500);

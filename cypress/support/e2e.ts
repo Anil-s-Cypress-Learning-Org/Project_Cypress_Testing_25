@@ -18,3 +18,10 @@ import './commands'
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
+
+// for using Xpath plugin's 
+require('cypress-xpath')
+
+// for Mocha Aswome Report plugin //
+import 'cypress-mochawesome-reporter/register'
+

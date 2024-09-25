@@ -9,16 +9,14 @@
     "cy:headless": "cypress run --spec 'cypress/e2e/**/**/*.js, cypress/e2e/**/*.js' --config videoUploadOnPasses=false",
     "cy:recordFullScreen": "cross-env CYPRESS_NO_COMMAND_LOG1=1 cypress run --e2e --browser chrome --spec"
   },
-  "_comment": {
-    "cypress:open": "cypress open e2e --browser chrome",
-    "cypress:run": "cypress run e2e --e2e --browser electron"
-  },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "cypress": "^11.2.0",
     "cypress-iframe": "^1.0.1",
+    "cypress-mochawesome-reporter": "^3.8.2",
+    "cypress-xpath": "^2.0.1",
     "typescript": "^5.6.2"
   }
 }

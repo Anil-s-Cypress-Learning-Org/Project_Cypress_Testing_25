@@ -28,7 +28,7 @@ describe('Rahul Shetty- Test to learn Callender', () => {
 
     it('learn Callender with Custom Command', () => {
         cy.get('.react-date-picker__inputGroup').click();
-        cy.datePicker('21', '10', '2025')
+        cy.GrrenKart_datePicker('21', '10', '2025')
 
     });
 

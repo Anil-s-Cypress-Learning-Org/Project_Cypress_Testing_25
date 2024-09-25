@@ -51,7 +51,7 @@ Cypress.Commands.add('RahulShpingApplogin', (UserName = Cypress.env('UserName'),
 })
 
 
-Cypress.Commands.add('GlobalSeasrch', (SearchText) => {
+Cypress.Commands.add('GrrenKart_GlobalSeasrch', (SearchText) => {
     cy.get('input[class="search-keyword"]').clear().type(SearchText)
     cy.wait(500)
     cy.get('button[type="submit"]').click();
@@ -59,7 +59,7 @@ Cypress.Commands.add('GlobalSeasrch', (SearchText) => {
 });
 
 
-Cypress.Commands.add('AddToCart', (decission) => {
+Cypress.Commands.add('GrrenKart_AddToCart', (decission) => {
 
     if (decission === 'increment') {
         cy.get(`[class="${decission}"]`).click()
@@ -82,8 +82,8 @@ Cypress.Commands.add('AddToCart', (decission) => {
 });
 
 
-Cypress.Commands.add('VegitableCostPrice', (SelectedVegitableName) => {
-    cy.GlobalSeasrch(SelectedVegitableName);
+Cypress.Commands.add('GrrenKart_VegitableCostPrice', (SelectedVegitableName) => {
+    cy.GrrenKart_GlobalSeasrch(SelectedVegitableName);
     cy.get('.product-price').first()
         .invoke('text')
 
@@ -108,7 +108,7 @@ Cypress.Commands.add('VegitableCostPrice', (SelectedVegitableName) => {
         });
 });
 
-Cypress.Commands.add('datePicker', (dateIn, InMonth, InYear) => {
+Cypress.Commands.add('GrrenKart_datePicker', (dateIn, InMonth, InYear) => {
     const monthNumber = InMonth;
     const date = dateIn;
     const year = InYear;

@@ -4,7 +4,7 @@ describe('test', () => {
         cy.RahulShpingApplogin();
     });
 
-    it.skip('rahulshettyacademy Shopping App', () => {
+    it.only('rahulshettyacademy Shopping App', () => {
         // cy.RahulShpingApplogin();
         cy.get('[class="left mt-1"] p').contains('Automation Practice');
 
