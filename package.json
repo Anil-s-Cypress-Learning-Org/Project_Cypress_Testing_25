@@ -4,16 +4,21 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "cy:open": "cypress open --e2e --browser chrome",
-    "cy:run": "cypress run --e2e --browser electron",
-    "cy:headless": "cypress run --spec 'cypress/e2e/**/**/*.js, cypress/e2e/**/*.js' --config videoUploadOnPasses=false",
-    "cy:recordFullScreen": "cross-env CYPRESS_NO_COMMAND_LOG1=1 cypress run --e2e --browser chrome --spec"
+    "chromeTestHeaded": "cypress open --e2e --browser chrome",
+    "chromeTestHeadLess": "cypress run --e2e --browser chrome",
+    "headless": "npx cypress run",
+    "headTest": "npm run test --headed",
+    "OneSpecFileTest:headless": "npx cypress run --spec \"cypress/e2e/RHL-TestsFor-CypressConcepts/Test1-customScript-spec.ts\"",
+    "OneSpecFileTest:headed": "cypress open --spec cypress/e2e/RHL-TestsFor-CypressConcepts/Test1-customScript-spec.ts --browser chrome",
+    "OneFolderTest:headless": "npx cypress run --spec \"cypress/e2e/RHL-TestsFor-CypressConcepts/*\"",
+    "OneFolderTest:headed": "npx cypress open --spec \"cypress/e2e/RHL-TestsFor-CypressConcepts/*\"",
+    "recordDashBoardTest": "npx cypress run --record --key 1154b17a3179184d9ea354c2e3ca6a023b"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "^11.2.0",
+    "cypress": "^13.15.2",
     "cypress-iframe": "^1.0.1",
     "cypress-mochawesome-reporter": "^3.8.2",
     "cypress-xpath": "^2.0.1",

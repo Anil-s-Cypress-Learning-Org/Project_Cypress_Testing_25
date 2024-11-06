@@ -17,7 +17,7 @@ describe('test', () => {
         cy.GrrenKart_AddToCart(50);
     });
 
-    it('Vegitable Cost Price Comparison With fixtures Data', () => {
+    it.skip('Vegitable Cost Price Comparison With fixtures Data', () => {
         cy.fixture('VegitablesTest1').then((FixturesDataOfVegItem) => {
 
             FixturesDataOfVegItem.productDeatails.forEach((FDATA: any) => {

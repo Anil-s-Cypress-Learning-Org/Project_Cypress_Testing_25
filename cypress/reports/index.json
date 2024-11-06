@@ -1,0 +1,148 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 2,
+    "pending": 1,
+    "failures": 0,
+    "testsRegistered": 3,
+    "passPercent": 66.66666666666667,
+    "pendingPercent": 33.333333333333336,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false,
+    "start": "2024-09-30T07:10:59.580Z",
+    "end": "2024-09-30T07:11:05.276Z",
+    "duration": 5696
+  },
+  "results": [
+    {
+      "uuid": "85770d52-5315-4b5e-bad3-acaabc111bf9",
+      "title": "",
+      "fullFile": "cypress/e2e/RHL-TestsFor-CypressConcepts/Test1-customScript-spec.ts",
+      "file": "cypress/e2e/RHL-TestsFor-CypressConcepts/Test1-customScript-spec.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "98f6cc34-bec3-403a-a63c-d41ef39ab480",
+          "title": "test",
+          "fullFile": "cypress/e2e/RHL-TestsFor-CypressConcepts/Test1-customScript-spec.ts",
+          "file": "cypress/e2e/RHL-TestsFor-CypressConcepts/Test1-customScript-spec.ts",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Basic Test",
+              "fullTitle": "test Basic Test",
+              "timedOut": null,
+              "duration": 3781,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.GrrenKart_GlobalSeasrch('Apple');\n// visible here we used identify the lenghth of only visible items try only \"ca\" in GlobalSearch command//\n// cy.get('[class=\"product\"]:visible').should('have.length', 4);\ncy.GrrenKart_AddToCart('increment');\ncy.GrrenKart_AddToCart('decrement');\ncy.GrrenKart_AddToCart(50);",
+              "err": {},
+              "uuid": "335a2e1d-6ab8-443f-915e-dc5852a969d9",
+              "parentUUID": "98f6cc34-bec3-403a-a63c-d41ef39ab480",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Vegitable Cost Price Comparison With fixtures Data",
+              "fullTitle": "test Vegitable Cost Price Comparison With fixtures Data",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture('VegitablesTest1').then(function (FixturesDataOfVegItem) {\n    FixturesDataOfVegItem.productDeatails.forEach(function (FDATA) {\n        Object.keys(FDATA).forEach(function (vegetableName) {\n            var expectedPrice = Number(FDATA[vegetableName]);\n            cy.GrrenKart_VegitableCostPrice(vegetableName).should('eq', expectedPrice);\n        });\n        // for (const vegetableName in FDATA) {\n        //     let expectedPrice = Number(FDATA[vegetableName]);\n        //     cy.GrrenKart_VegitableCostPrice(vegetableName).should('eq', expectedPrice);\n        // }\n    });\n});",
+              "err": {},
+              "uuid": "c532629a-efc5-4218-b335-ceffb9b633ca",
+              "parentUUID": "98f6cc34-bec3-403a-a63c-d41ef39ab480",
+              "isHook": false,
+              "skipped": true
+            },
+            {
+              "title": "Vegitable Cost Price Comparison With fixtures Data",
+              "fullTitle": "test Vegitable Cost Price Comparison With fixtures Data",
+              "timedOut": null,
+              "duration": 1848,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture('VegitablesTest1').then(function (Vegdata) {\n    Vegdata.productDeatails.forEach(function (VegitableCostDetails) {\n        // To test All the fruits cost price //\n        // for (const vegetableName in VegitableCostDetails) {\n        //     cy.GrrenKart_VegitableCostPrice(vegetableName).should('eq', Number(VegitableCostDetails[vegetableName]));\n        // }\n        // for test only one fruit price //\n        var fruitToTest = 'Apple';\n        var expectedPrice = Number(Vegdata.productDeatails[0][fruitToTest]);\n        cy.GrrenKart_VegitableCostPrice(fruitToTest).should('eq', expectedPrice);\n        // cy.GrrenKart_VegitableCostPrice('Carrot').should('eq', 56);\n    });\n});",
+              "err": {},
+              "uuid": "a9bd588a-6350-4220-88e6-f6f5e027639e",
+              "parentUUID": "98f6cc34-bec3-403a-a63c-d41ef39ab480",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "335a2e1d-6ab8-443f-915e-dc5852a969d9",
+            "a9bd588a-6350-4220-88e6-f6f5e027639e"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [
+            "c532629a-efc5-4218-b335-ceffb9b633ca"
+          ],
+          "duration": 5629,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports/.jsons",
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "charts": true,
+        "embeddedScreenshots": true,
+        "inlineAssets": true,
+        "saveJson": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

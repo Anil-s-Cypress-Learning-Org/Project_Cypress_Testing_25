@@ -4,11 +4,11 @@ describe('test', () => {
         cy.RahulShpingApplogin();
     });
 
-    it.only('rahulshettyacademy Shopping App', () => {
+    it('rahulshettyacademy Shopping App', () => {
         // cy.RahulShpingApplogin();
         cy.get('[class="left mt-1"] p').contains('Automation Practice');
 
-        cy.get('[class="card"]').should('have.length', 3)
+        cy.get('[class="card"]').should('have.length', 4)
             .each(($el) => {
                 const extractText = $el.find('h5').text()
 
@@ -22,7 +22,7 @@ describe('test', () => {
 
     it('rahulshettyacademy Shopping App', () => {
 
-        cy.get('[class="card"]').should('have.length', 3)
+        cy.get('[class="card"]').should('have.length', 4)
             .each(($el, index) => {
                 cy.wait(100)
                 // Each card is now accessible as $$el
@@ -30,7 +30,7 @@ describe('test', () => {
                     .invoke('text') // Extract the text content
                     .then((text) => {
 
-                        const keywords = ['ZARA COAT 3', 'ADIDAS ORIGINAL', 'IPHONE 13 PRO']; // Example keywords
+                        const keywords = ['ZARA COAT 3', 'ADIDAS ORIGINAL', 'IPHONE 13 PRO', 'qwerty']; // Example keywords
                         expect(text).to.include(keywords[index]); // Expect the text to include a keyword
 
                         if (text.includes('IPHONE 13 PRO')) {

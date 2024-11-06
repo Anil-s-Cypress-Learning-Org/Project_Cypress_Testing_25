@@ -1,24 +1,31 @@
 {
     "compilerOptions": {
         "allowSyntheticDefaultImports": true,
+        // (allowSyntheticDefaultImports: true) [ Allows default imports from modules that don’t have an explicit default export. Useful when importing libraries that use CommonJS modules (like Cypress) but are being consumed in an ES module environment.] //
         "composite": true,
+        // (composite: true) Enables project references and incremental compilation. It's typically used in large projects or monorepos where you want to compile multiple projects together, enabling faster builds.]
         "skipLibCheck": true,
+        //(skipLibCheck: true) [Skips type checking of all declaration files (.d.ts). This can speed up the compilation process but might miss potential type conflicts within third-party libraries.]
         "module": "ESNext",
+        //(module: "ESNext") [Specifies the module code generation, in this case, ESNext, which means that TypeScript will output ES modules.]
         "target": "es5",
+        //[(target: "es5") This option specifies that the compiled JavaScript should be compatible with ES5 (older browsers). This is important for making the code backward-compatible, even though the project is using ESNext modules.]
         "strict": false,
+        //("strict": false) [Disables all strict type checking options. Setting this to false turns off options like strictNullChecks, strictFunctionTypes, and strictBindCallApply. This allows for looser type safety.]
         "lib": [
             "dom"
         ],
         "types": [
-            "cypress",
-            "node",
-            "cypress-iframe"
+            "cypress", // For Cypress types
+            "node", // For Node.js types, useful when interacting with the file system or environment variables.
+            "cypress-iframe" // For dealing with iframes in Cypress.
             // "jquery"
         ]
+        // Specifies the type definitions to be used in the project. These provide TypeScript with the necessary types for working with Cypress, Node.js, and the cypress-iframe plugin. //
         // "baseUrl": "./", // Optional: Specify your project's base directory
         // "paths": { "@/*": ["src/*"] } // Optional: Custom path aliases
     },
-    "baseUrl": "./",
+    "baseUrl": "./", // Specifies the root directory of the project for module resolution. This is optional, but when used, it helps resolve paths relative to the base directory, making imports cleaner. //
     "paths": {
         "@cypress/*": [
             "../cypress/*"
@@ -31,9 +38,9 @@
         ],
     },
     "include": [
-        "cypress/**/**/*.ts",
-        "cypress/support/@DocTypes/commands.d.ts",
-        "cypress.d.ts"
+        "cypress/**/**/*.ts", // all spec files 
+        "cypress/support/@DocTypes/commands.d.ts", // for documentation //
+        "cypress.d.ts" // for intelisense //
     ],
     "exclude": [
         "node_modules",

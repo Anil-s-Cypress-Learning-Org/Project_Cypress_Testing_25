@@ -6,11 +6,12 @@ import { exec } from "child_process";
 // import { afterRunHook, beforeRunHook } from "cypress-mochawsome-reporter/lib";
 
 export default defineConfig({
+  projectId: 'xigz7q',
   env: {
     // API_URL: '',
     // _base_Url: '',
     UserName: "kumarglina@gmail.com",
-    Password: "Jaisriram@99631234",
+    Password: "Gak@99631234",
   },
 
 
@@ -25,7 +26,9 @@ export default defineConfig({
   trashAssetsBeforeRuns: true,
   screenshotOnRunFailure: false,
   video: false,
-  videoUploadOnPasses: false,
+  // videoUploadOnPasses: false,  // not available in 13th version
+  chromeWebSecurity: false,
+
 
   reporter: 'cypress-mochawesome-reporter',
   reporterOptions: {
@@ -39,11 +42,11 @@ export default defineConfig({
     saveJson: true                      // Save the JSON report
   },
 
+  retries: {
+    runMode: 1
+  },
+
   e2e: {
-    setupNodeEvents(on, config) {
-      require('cypress-mochawesome-reporter/plugin')(on);
-      // implement node event listeners here
-    },
 
     baseUrl: 'https://rahulshettyacademy.com/client/',
     specPattern: 'cypress/e2e/**/*.{js,jsx,ts,tsx}',

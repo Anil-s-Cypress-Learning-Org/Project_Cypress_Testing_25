@@ -72,7 +72,7 @@ describe('Rahul Shetty- Test to learn Check Boxes drop downs', () => {
 
 
     it('Learn Handle the Child TAB and Child Window in your Page "cy.origin" & "removeAttr" ', () => {
-        // we trying to reve the attribute from jquery i'm trying to remove this "target="_blank""//   
+        // we trying to revese the attribute from jquery i'm trying to remove this "target="_blank""//   
         cy.get('#opentab').click();
         // if above i used another URL opend in separate Tab cypress can not test other tab //
 

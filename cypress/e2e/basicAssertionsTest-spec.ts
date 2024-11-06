@@ -1,5 +1,3 @@
-/// <reference types="Cypress" />
-
 describe('Basic GreenKart Test', () => {
     it('Basic green cart Test', () => {
         cy.visit('https://rahulshettyacademy.com/seleniumPractise/#/');
