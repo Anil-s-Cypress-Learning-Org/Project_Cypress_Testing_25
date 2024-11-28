@@ -6,7 +6,7 @@
         // (composite: true) Enables project references and incremental compilation. It's typically used in large projects or monorepos where you want to compile multiple projects together, enabling faster builds.]
         "skipLibCheck": true,
         //(skipLibCheck: true) [Skips type checking of all declaration files (.d.ts). This can speed up the compilation process but might miss potential type conflicts within third-party libraries.]
-        "module": "ESNext",
+        "module": "commonjs", // ESNext",
         //(module: "ESNext") [Specifies the module code generation, in this case, ESNext, which means that TypeScript will output ES modules.]
         "target": "es5",
         //[(target: "es5") This option specifies that the compiled JavaScript should be compatible with ES5 (older browsers). This is important for making the code backward-compatible, even though the project is using ESNext modules.]
@@ -20,7 +20,8 @@
             "node", // For Node.js types, useful when interacting with the file system or environment variables.
             "cypress-iframe" // For dealing with iframes in Cypress.
             // "jquery"
-        ]
+        ],
+        "moduleResolution": "node", // Ensure Node.js resolution is enabled.
         // Specifies the type definitions to be used in the project. These provide TypeScript with the necessary types for working with Cypress, Node.js, and the cypress-iframe plugin. //
         // "baseUrl": "./", // Optional: Specify your project's base directory
         // "paths": { "@/*": ["src/*"] } // Optional: Custom path aliases
@@ -36,11 +37,16 @@
         "@fixtures/*": [
             "../cypress/fixture"
         ],
+        "@cypress-mochawesome-reporter/plugin": [
+            "node_modules/cypress-mochawesome-reporter/plugin"
+        ],
     },
     "include": [
         "cypress/**/**/*.ts", // all spec files 
         "cypress/support/@DocTypes/commands.d.ts", // for documentation //
-        "cypress.d.ts" // for intelisense //
+        "cypress.d.ts", // for intelisense //
+        "src/**/*.ts",
+        "src/**/*.d.ts" // Include all TypeScript and declaration files
     ],
     "exclude": [
         "node_modules",

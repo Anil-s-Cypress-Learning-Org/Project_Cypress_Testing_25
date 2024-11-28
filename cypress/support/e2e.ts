@@ -23,5 +23,4 @@ import './commands'
 require('cypress-xpath')
 
 // for Mocha Aswome Report plugin //
-import 'cypress-mochawesome-reporter/register'
-
+import 'cypress-mochawesome-reporter/register';

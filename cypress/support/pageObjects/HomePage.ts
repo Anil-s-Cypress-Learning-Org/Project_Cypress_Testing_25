@@ -1,3 +1,4 @@
+import ProductPage from '../../support/pageObjects/ProductPage'
 class HomePage {
 
     getEdiorBox() {
@@ -18,6 +19,17 @@ class HomePage {
 
     getShopTab() {
         return cy.contains('Shop')
+    }
+
+    goTo() {
+        cy.visit('https://rahulshettyacademy.com/loginpagePractise/')
+    }
+
+    login(username: any, password: any) {
+        cy.get("#username").type(username)
+        cy.get("#password").type(password)
+        cy.contains("Sign In").click()
+        return new ProductPage()
     }
 }
 

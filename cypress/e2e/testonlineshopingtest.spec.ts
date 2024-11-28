@@ -19,7 +19,6 @@ describe('test', () => {
     });
 
 
-
     it('rahulshettyacademy Shopping App', () => {
 
         cy.get('[class="card"]').should('have.length', 4)

@@ -1,6 +1,21 @@
-import cypress, { defineConfig } from "cypress";
+import Cypress, { defineConfig } from "cypress";
 
-import cypressMochawesomeReporter from 'cypress-mochawesome-reporter/plugin';
+/* 
+is used to import the defineConfig function from the cypress package. The purpose of defineConfig is to provide a type-safe way to define Cypress configuration in TypeScript, making it easier to work with Cypress configuration files and providing TypeScript’s type checking and autocompletion features.
+1.	Type Safety:
+It ensures that the configuration you define follows the correct types expected by Cypress. This helps avoid mistakes, like incorrect property names or values, and provides better editor support, such as autocompletion and type hints.
+  2.	Configuration Structuring:
+It helps structure the Cypress configuration in a more organized and explicit way, especially when you need to work with complex configurations like setting environment variables, command timeouts, base URLs, etc.
+  3.	TypeScript Support:
+Cypress automatically infers types when using defineConfig, so you get full TypeScript support for your configuration file. It also works well with Cypress’ global object like cy, Cypress, etc.
+  4.	Cleaner Syntax:
+Without defineConfig, you would have to export the configuration as a plain object, but using defineConfig gives you a more readable and structured approach to defining configuration values.
+
+*/
+
+// npm install --save-dev cypress-mochawesome-reporter';
+// import { plugin as cypressMochawesomeReporter } from "cypress-mochawesome-reporter/plugin";
+
 
 import { exec } from "child_process";
 // import { afterRunHook, beforeRunHook } from "cypress-mochawsome-reporter/lib";
@@ -47,12 +62,16 @@ export default defineConfig({
   },
 
   e2e: {
+    async setupNodeEvents(on, config) {
+      // require('cypress - mochawesome - reporter / plugin')(on);  // Add the mochawesome reporter plugin setup
+      // return config;
 
-    baseUrl: 'https://rahulshettyacademy.com/client/',
+      // You can also add any other hooks or functionality here
+    },
+    baseUrl: 'https://demoqa.com/profile',
     specPattern: 'cypress/e2e/**/*.{js,jsx,ts,tsx}',
     supportFile: 'cypress/support/e2e.{js,jsx,ts,tsx}'
   },
-
 });
 
 
