@@ -1,4 +1,4 @@
-import Cypress, { defineConfig } from "cypress";
+import { defineConfig } from "cypress";
 
 /* 
 is used to import the defineConfig function from the cypress package. The purpose of defineConfig is to provide a type-safe way to define Cypress configuration in TypeScript, making it easier to work with Cypress configuration files and providing TypeScript’s type checking and autocompletion features.
@@ -14,7 +14,7 @@ Without defineConfig, you would have to export the configuration as a plain obje
 */
 
 // npm install --save-dev cypress-mochawesome-reporter';
-// import { plugin as cypressMochawesomeReporter } from "cypress-mochawesome-reporter/plugin";
+import * as CypressMochawesomeReporter from 'cypress-mochawesome-reporter/plugin';
 
 
 import { exec } from "child_process";
@@ -63,8 +63,8 @@ export default defineConfig({
 
   e2e: {
     async setupNodeEvents(on, config) {
-      // require('cypress - mochawesome - reporter / plugin')(on);  // Add the mochawesome reporter plugin setup
-      // return config;
+      CypressMochawesomeReporter(on); // Correctly using the imported plugin
+      return config;
 
       // You can also add any other hooks or functionality here
     },
