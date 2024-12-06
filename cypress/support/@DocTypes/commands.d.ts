@@ -57,11 +57,17 @@ declare namespace Cypress {
         AddCartForMobileShop(SelectProduct: string): Chainable<Element>;
 
         /**
-       * custom command to Select the date in callender.
-       * @param SelectProduct Select the Mobile Product to Add tp your Cart.
-       * @example cy.AddCartForMobileShop('Apple');
-       */
+        * custom command to Select the date in callender.
+        * @param SelectProduct Select the Mobile Product to Add tp your Cart.
+        * @example cy.AddCartForMobileShop('Apple');
+        */
         RahulShpingApplogin(username?: string, password?: string): Chainable<Element>;
+
+        /**
+         * Log in Thru Seassion Storage Tocken
+         */
+        LoginAPI(): Chainable<Element>;
+
 
     }
 }

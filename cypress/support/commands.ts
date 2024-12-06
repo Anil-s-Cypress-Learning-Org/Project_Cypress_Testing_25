@@ -50,6 +50,14 @@ Cypress.Commands.add('RahulShpingApplogin', (UserName = Cypress.env('UserName'),
     // })
 })
 
+Cypress.Commands.add('LoginAPI', () => {
+    cy.request('POST', 'https://rahulshettyacademy.com/api/ecom/auth/login', { "userEmail": "kumarglina@gmail.com", "userPassword": "Gak@99631234" }).then((response) => {
+        expect(response.status).eq(200);
+        Cypress.env('token', response.body.token);
+    });
+});
+
+
 
 Cypress.Commands.add('GrrenKart_GlobalSeasrch', (SearchText) => {
     cy.get('input[class="search-keyword"]').clear().type(SearchText)

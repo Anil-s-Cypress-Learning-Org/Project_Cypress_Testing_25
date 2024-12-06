@@ -1,5 +1,6 @@
 {
     "compilerOptions": {
+        "esModuleInterop": true,
         "allowSyntheticDefaultImports": true,
         // (allowSyntheticDefaultImports: true) [ Allows default imports from modules that don’t have an explicit default export. Useful when importing libraries that use CommonJS modules (like Cypress) but are being consumed in an ES module environment.] //
         "composite": true,
