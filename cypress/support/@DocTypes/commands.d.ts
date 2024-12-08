@@ -66,8 +66,7 @@ declare namespace Cypress {
         /**
          * Log in Thru Seassion Storage Tocken
          */
-        LoginAPI(): Chainable<Element>;
-
+        API_Login_RahulShpingAppn(): Chainable<Element>;
 
     }
 }

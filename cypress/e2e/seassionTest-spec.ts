@@ -9,13 +9,7 @@ let productName: any
 let ProductPrice: any
 describe('Seassion Test - is logged in through local storage', () => {
     it('is logged in through local storage', () => {
-        cy.LoginAPI().then(() => {
-            cy.visit('https://rahulshettyacademy.com/client/', {
-                onBeforeLoad: ((window) => {
-                    window.localStorage.setItem('token', Cypress.env('token'))
-                })
-            })
-        });
+        cy.API_Login_RahulShpingAppn();
 
         cy.get(".card-body b").eq(1).then((ele) => {
             productName = ele.text();

@@ -13,8 +13,10 @@ Without defineConfig, you would have to export the configuration as a plain obje
 
 */
 
-// npm install --save-dev cypress-mochawesome-reporter';
-import * as CypressMochawesomeReporter from 'cypress-mochawesome-reporter/plugin';
+// npm install --save-dev cypress-mochawesome-reporter
+import cypressMochawesomeReporter from 'cypress-mochawesome-reporter/plugin'
+
+
 
 
 import { exec } from "child_process";
@@ -63,12 +65,10 @@ export default defineConfig({
 
   e2e: {
     async setupNodeEvents(on, config) {
-      CypressMochawesomeReporter(on); // Correctly using the imported plugin
+      cypressMochawesomeReporter(on); // Correct function usage
       return config;
-
-      // You can also add any other hooks or functionality here
     },
-    baseUrl: 'https://demoqa.com/profile',
+    baseUrl: 'https://demoqa.com/login',
     specPattern: 'cypress/e2e/**/*.{js,jsx,ts,tsx}',
     supportFile: 'cypress/support/e2e.{js,jsx,ts,tsx}'
   },

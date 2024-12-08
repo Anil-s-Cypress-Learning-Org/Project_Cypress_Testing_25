@@ -48,15 +48,22 @@ Cypress.Commands.add('RahulShpingApplogin', (UserName = Cypress.env('UserName'),
     cy.get('#login').click()
     cy.url().should('contain', '/client/dashboard/dash')
     // })
-})
+});
 
-Cypress.Commands.add('LoginAPI', () => {
+Cypress.Commands.add('API_Login_RahulShpingAppn', () => {
     cy.request('POST', 'https://rahulshettyacademy.com/api/ecom/auth/login', { "userEmail": "kumarglina@gmail.com", "userPassword": "Gak@99631234" }).then((response) => {
         expect(response.status).eq(200);
         Cypress.env('token', response.body.token);
-    });
-});
+    })
 
+        .then(() => {
+            cy.visit('https://rahulshettyacademy.com/client/', {
+                onBeforeLoad: ((window) => {
+                    window.localStorage.setItem('token', Cypress.env('token'))
+                })
+            })
+        });
+});
 
 
 Cypress.Commands.add('GrrenKart_GlobalSeasrch', (SearchText) => {
@@ -147,3 +154,4 @@ Cypress.Commands.add('AddCartForMobileShop', (SelectProduct) => {
         }
     });
 });
+
