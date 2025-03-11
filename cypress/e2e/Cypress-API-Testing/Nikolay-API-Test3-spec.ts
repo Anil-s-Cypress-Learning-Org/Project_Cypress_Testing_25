@@ -72,7 +72,9 @@ context("Network Requests", () => {
             });
     });
 
-    it.skip("cy.intercept() - route responses to matching requests", () => {
+    it("cy.intercept() - route responses to matching requests", () => {
+
+        cy.visit('https://example.cypress.io/commands/network-requests')
         // https://on.cypress.io/intercept
 
         let message = "whoa, this comment does not exist";
