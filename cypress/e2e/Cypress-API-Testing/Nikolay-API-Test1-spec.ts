@@ -77,22 +77,23 @@ describe("Network Requests", () => {
             userId: 11,
             title: "Cypress POST",
             body: "w/ aliasing",
-        }).as("post");
+        }).as("postResponse");
 
         // tip: log the request object to see everything it has in the console
-        cy.get('@post').then(console.log)
+        cy.get('@postResponse').then(console.log)
 
         // you can retrieve the XHR multiple times -
         // returns the same object.
-        cy.get('@post')
+        cy.get('@postResponse')
             .then((response) => {
                 console.log(response);
                 // expect the response status to be 201
                 expect(response).property("status").to.equal(201); // new entity created
                 // expect the response body to contain the title = "Cypress Test"
-                expect(response.body).to.contain({
-                    title: "Cypress POST",
-                });
+                // expect(response.body).to.contain({
+                //     title: "Cypress POST",
+                // });  [without below warp cypress think that it's a jquesry elemnt so we wrap]
+                cy.wrap(response).its("body").should("contain", { title: "Cypress POST" });
             });
     });
 
