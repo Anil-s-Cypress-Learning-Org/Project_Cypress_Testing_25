@@ -82,7 +82,7 @@ context("Network Requests", () => {
 
         // we have code that gets a comment when
         // the button is clicked in scripts.js
-        cy.get("[.network-btn]").click();
+        cy.get(".network-btn").click();
 
         // https://on.cypress.io/wait
         cy.wait("@getComment")
