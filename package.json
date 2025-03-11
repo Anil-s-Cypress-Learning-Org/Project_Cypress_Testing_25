@@ -13,19 +13,27 @@
     "oneSpecFileTest:headless": "npx cypress run --browser chrome --spec cypress/e2e/basicAssertionsTest-spec.ts",
     "oneSpecFileTest:headed": "npx cypress run --browser chrome --headed --spec cypress/e2e/basic_XpathTest-spec.ts",
     "oneFolderTest:headless": "npx cypress run --browser electron --spec \"cypress/e2e/RHL-TestsFor-CypressConcepts/*\"",
-    "recordDashboardTest": "npx cypress run --record --key 1154b17a3179184d9ea354c2e3ca6a023b"
+    "recordDashboardTest": "npx cypress run --record --key 1154b17a3179184d9ea354c2e3ca6a023b",
+    "start": "node dist/server.js",
+    "dev": "nodemon --ext ts --exec ts-node server.ts"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@types/cypress": "^1.1.6",
+    "@types/express": "^5.0.0",
     "@types/node": "^22.10.1",
     "cypress": "^14.1.0",
     "cypress-iframe": "^1.0.1",
     "cypress-mochawesome-reporter": "^3.8.2",
     "cypress-xpath": "^2.0.1",
     "neat-csv": "^5.1.0",
-    "typescript": "^5.7.2"
+    "nodemon": "^3.1.9",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.2"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
   }
 }

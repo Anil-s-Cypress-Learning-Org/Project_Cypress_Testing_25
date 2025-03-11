@@ -46,7 +46,8 @@
         "cypress/**/**/*.ts", // all spec files 
         "cypress/support/@DocTypes/commands.d.ts", // for documentation //
         "cypress.d.ts", // for intelisense //
-        "cypress/support/**/*.d.ts"
+        "cypress/support/**/*.d.ts",
+        "server.ts"
     ],
     "exclude": [
         "node_modules",
