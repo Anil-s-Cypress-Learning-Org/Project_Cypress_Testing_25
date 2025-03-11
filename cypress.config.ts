@@ -66,8 +66,20 @@ export default defineConfig({
   e2e: {
     async setupNodeEvents(on, config) {
       cypressMochawesomeReporter(on); // Correct function usage
+
+      // Console logs capture చేయడానికి
+      on('task', {
+        logConsoleMessages(message) {
+          console.log('Browser Console:', message);
+          return null;
+        }
+      });
+
       return config;
     },
+    // WebDriver BiDi Enable చేయడం
+    experimentalWebKitSupport: true,
+
     baseUrl: 'https://demoqa.com/login',
     specPattern: 'cypress/e2e/**/*.{js,jsx,ts,tsx}',
     supportFile: 'cypress/support/e2e.{js,jsx,ts,tsx}'
