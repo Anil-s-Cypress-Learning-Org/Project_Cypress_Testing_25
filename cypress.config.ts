@@ -31,7 +31,6 @@ export default defineConfig({
     Password: "Gak@99631234",
   },
 
-
   defaultCommandTimeout: 30000,
   requestTimeout: 100000,
   responseTimeout: 100000,
