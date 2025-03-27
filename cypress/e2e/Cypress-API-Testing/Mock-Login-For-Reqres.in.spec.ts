@@ -26,12 +26,12 @@ describe('Mock Login & Fetch User Data', () => {
                     url: 'https://reqres.in/api/users/2', // Fetch user data (example: user ID 2)
                 }).then((userResp) => {
                     expect(userResp.status).to.eq(200);
-                    const userData = userResp.body.data;
-                    cy.log('User Data:', userData);
+                    const DetailsOfUser = userResp.body.data;
+                    cy.log('User Data:', DetailsOfUser);
 
                     // ✅ Store user data in local storage
                     cy.window().then((win) => {
-                        win.localStorage.setItem('userData', JSON.stringify(userData));
+                        win.localStorage.setItem('userData', JSON.stringify(DetailsOfUser));
                         /* 
                             1.	win.localStorage.getItem('userData')
                             •	Retrieves the userData stored in localStorage.
@@ -44,8 +44,8 @@ describe('Mock Login & Fetch User Data', () => {
                         */
                         const storedUserData = JSON.parse(win.localStorage.getItem('userData') || '{}');
                         // ✅ Validate stored user data
-                        expect(storedUserData.id).to.eq(userData.id);
-                        expect(storedUserData.email).to.eq(userData.email);
+                        expect(storedUserData.id).to.eq(DetailsOfUser.id);
+                        expect(storedUserData.email).to.eq(DetailsOfUser.email);
                     });
                 });
             });
