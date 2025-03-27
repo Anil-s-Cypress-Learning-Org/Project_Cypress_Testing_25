@@ -27,8 +27,9 @@ export default defineConfig({
   env: {
     // API_URL: '',
     // _base_Url: '',
-    UserName: "kumarglina@gmail.com",
-    Password: "Gak@99631234",
+    weatherApiKey: process.env.WEATHER_API_KEY, // Fetch from env variable for security
+    UserName: process.env.UserName,
+    Password: process.env.Password
   },
 
   defaultCommandTimeout: 30000,
