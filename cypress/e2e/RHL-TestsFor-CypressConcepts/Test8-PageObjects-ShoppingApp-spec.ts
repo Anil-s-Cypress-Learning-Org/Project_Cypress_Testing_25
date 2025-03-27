@@ -15,7 +15,7 @@ describe('End to End ecommerce Test', function () {
 
     it('Submit Order', function () {
         const productName = fixtureData.productName // product name here is fixtures data 
-
+        cy.wait(10000)
         this.homepage.goTo();
         cy.log(fixtureData.username)
         const productPage = this.homepage.login(fixtureData.username, fixtureData.password)
