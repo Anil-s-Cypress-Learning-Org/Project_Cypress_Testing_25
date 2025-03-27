@@ -8,7 +8,7 @@ describe('test', () => {
         // cy.RahulShpingApplogin();
         cy.get('[class="left mt-1"] p').contains('Automation Practice');
 
-        cy.get('[class="card"]').should('have.length', 4)
+        cy.get('[class="card"]').should('have.length', 3)
             .each(($el) => {
                 const extractText = $el.find('h5').text()
 
@@ -21,7 +21,7 @@ describe('test', () => {
 
     it('rahulshettyacademy Shopping App', () => {
 
-        cy.get('[class="card"]').should('have.length', 4)
+        cy.get('[class="card"]').should('have.length', 3)
             .each(($el, index) => {
                 cy.wait(100)
                 // Each card is now accessible as $$el
