@@ -66,8 +66,8 @@ describe('Mock Login & Fetch User Data', () => {
     });
 
 
-    it('UI Test', () => {
-        cy.visit('https://reqres.in/#support-heading');
+    it.only('UI Test', () => {
+        cy.visit('https://reqres.in/');
 
         cy.intercept("GET", "https://reqres.in/api/users?page=2").as("getUsers");
 

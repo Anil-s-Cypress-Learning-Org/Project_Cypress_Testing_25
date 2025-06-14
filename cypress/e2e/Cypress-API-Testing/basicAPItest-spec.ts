@@ -15,17 +15,33 @@ describe('Mock-HTTP-Responses and Stub Data', () => {
                 body: [
                     {
                         "book_name": "Learn Api testing",
-                        "isbn": "Mk128",
+                        "isbn": "Gak262",
                         "aisle": "143"
-                    }
+                    },
+                    // {
+                    //     "book_name": "Learn UI testing",
+                    //     "isbn": "Gak161",
+                    //     "aisle": "341"
+                    // }
+
                 ]
             }).as('bookRecordDetails');
 
         cy.get('[class="btn btn-primary"]').click();
-        cy.wait('@bookRecordDetails');
-        cy.get('p').should('contain', 'Oops only 1 Book available');
+        cy.wait('@bookRecordDetails').then((resp) => {
+            if (resp.response.body.length === 1) {
+                expect(resp.response).to.exist; // Ensures response exists
+                expect(resp.response!.body[0].isbn).to.eql('Gak262'); //The ! forces TypeScript to treat response as definitely defined.
 
-        // length of the response array = rows of the table //
+                cy.get('p').should('contain', 'Oops only 1 Book available');
+            }
+            else {
+                expect(resp.response).to.exist; // Ensures response exists
+                expect(resp.response?.body[1].isbn).to.eql('Gak161'); //The ! forces TypeScript to treat response as definitely defined.
+
+                cy.get('h2').first().should('contain', 'Books Availability in Rahul Shetty Academy Library')
+            };
+        });
     });
 
     it('Integration Testing with Front end and back end Responses validation assertions', () => {
@@ -84,7 +100,7 @@ describe('Mock-HTTP-Responses and Stub Data', () => {
     });
 
 
-    it('Handling API call directly with out involving browser with cypress', () => {
+    it.only('Handling API call directly with out involving browser with cypress', () => {
 
         cy.request('POST', 'http://216.10.245.166/Library/Addbook.php',
             {
@@ -97,5 +113,14 @@ describe('Mock-HTTP-Responses and Stub Data', () => {
             // expect(response.body).to.have.property('Msg', 'successfully added')
             expect(response.status).to.eq(200);
         })
+        cy.request({
+            method: 'DELETE',
+            url: 'http://216.10.245.166/Library/Addbook.php',
+            body: {
+                aisle: '7776'
+            }
+        })
+
+
     });
 });

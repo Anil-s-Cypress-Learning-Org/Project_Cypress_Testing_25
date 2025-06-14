@@ -7,6 +7,7 @@ import 'cypress-iframe'
 describe('Rahul Shetty- Test to learn Handling Frames', () => {
 
     beforeEach(() => {
+        Cypress.session.clearAllSavedSessions();
         cy.visit('https://rahulshettyacademy.com/AutomationPractice/');
     });
 
