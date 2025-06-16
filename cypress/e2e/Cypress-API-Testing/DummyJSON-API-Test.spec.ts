@@ -88,9 +88,9 @@ describe('API Testing for Dummy Json Web site Application For Practice', () => {
             expect(resp.body).to.have.property('category', 'beauty')
 
             const reviews = resp.body.reviews[2];
-            expect(reviews.reviewerEmail).to.equal('scarlett.wright@x.dummyjson.com');
+            expect(reviews.reviewerEmail).to.equal('eleanor.collins@x.dummyjson.com');
             expect(reviews.rating).to.equal(5);
-            expect(reviews.reviewerName).to.equal('Scarlett Wright');
+            expect(reviews.reviewerName).to.equal('Eleanor Collins');
             cy.log(resp.body);
         })
     });
