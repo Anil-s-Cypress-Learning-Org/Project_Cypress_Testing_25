@@ -16,7 +16,7 @@ Without defineConfig, you would have to export the configuration as a plain obje
 // npm install --save-dev cypress-mochawesome-reporter
 import cypressMochawesomeReporter from 'cypress-mochawesome-reporter/plugin'
 
-
+import 'dotenv/config'; // Load environment variables
 
 
 import { exec } from "child_process";

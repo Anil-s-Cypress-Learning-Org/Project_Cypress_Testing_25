@@ -40,18 +40,24 @@ import { isNumber } from "../../node_modules/cypress/types/lodash/index";
 // }
 
 
-Cypress.Commands.add('RahulShpingApplogin', (UserName = Cypress.env('UserName'), Password = Cypress.env('Password')) => {
+Cypress.Commands.add('RahulShpingApplogin', () => {
     // cy.session([UserName, Password], () => {
+    const UserName = Cypress.env('UserName');
+    const Password = Cypress.env('Password');
+    cy.log(`Loaded Username: ${UserName}`);
+    cy.log(`Loaded Password: ${Password}`);
     cy.visit('https://rahulshettyacademy.com/client/')
     cy.get('[id="userEmail"]').type(UserName)
     cy.get('[id="userPassword"]').type(Password)
     cy.get('#login').click()
-    cy.url().should('contain', '/client/dashboard/dash')
+    cy.url().should('contain', '/#/dashboard/dash')
     // })
 });
 
 Cypress.Commands.add('API_Login_RahulShpingAppn', () => {
-    cy.request('POST', 'https://rahulshettyacademy.com/api/ecom/auth/login', { "userEmail": "kumarglina@gmail.com", "userPassword": "Gak@99631234" }).then((response) => {
+    const UserName = Cypress.env('UserName');
+    const Password = Cypress.env('Password');
+    cy.request('POST', 'https://rahulshettyacademy.com/api/ecom/auth/login', { "userEmail": `${UserName}`, "userPassword": `${Password}` }).then((response) => {
         expect(response.status).eq(200);
         Cypress.env('token', response.body.token);
     })
