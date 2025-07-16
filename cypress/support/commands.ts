@@ -44,8 +44,6 @@ Cypress.Commands.add('RahulShpingApplogin', () => {
     // cy.session([UserName, Password], () => {
     const UserName = Cypress.env('UserName');
     const Password = Cypress.env('Password');
-    cy.log(`Loaded Username: ${UserName}`);
-    cy.log(`Loaded Password: ${Password}`);
     cy.visit('https://rahulshettyacademy.com/client/')
     cy.get('[id="userEmail"]').type(UserName)
     cy.get('[id="userPassword"]').type(Password)
