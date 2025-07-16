@@ -1,4 +1,4 @@
-describe('XPath test', () => {
+describe('XPath testing', () => {
 
     Cypress._.times(2, (k) => {
         it(`Xpath Test Iteration ${k + 3}`, () => {
