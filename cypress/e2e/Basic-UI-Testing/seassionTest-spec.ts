@@ -11,6 +11,7 @@ describe('Seassion Test - is logged in through local storage', () => {
     it('is logged in through local storage', () => {
         cy.API_Login_RahulShpingAppn();
 
+
         cy.get(".card-body b").eq(1).then((ele) => {
             productName = ele.text();
         })
