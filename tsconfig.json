@@ -19,8 +19,9 @@
         "types": [
             "cypress", // For Cypress types
             "node", // For Node.js types, useful when interacting with the file system or environment variables.
-            "cypress-iframe" // For dealing with iframes in Cypress.
+            "cypress-iframe", // For dealing with iframes in Cypress.
             // "jquery"
+            "cypress-xpath"
         ],
         "moduleResolution": "node", // Ensure Node.js resolution is enabled.
         // Specifies the type definitions to be used in the project. These provide TypeScript with the necessary types for working with Cypress, Node.js, and the cypress-iframe plugin. //
