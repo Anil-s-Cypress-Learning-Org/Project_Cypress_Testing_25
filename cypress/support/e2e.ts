@@ -19,8 +19,9 @@ import './commands'
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
 
-// for using Xpath plugin's 
-require('cypress-xpath')
+
+// cypress/support/e2e.js or e2e.ts
+import 'cypress-xpath';
 
 // for Mocha Aswome Report plugin //
 import 'cypress-mochawesome-reporter/register';
