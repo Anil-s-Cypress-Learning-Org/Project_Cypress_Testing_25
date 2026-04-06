@@ -79,7 +79,9 @@ export default defineConfig({
     },
     // WebDriver BiDi Enable చేయడం
     experimentalWebKitSupport: true,
-
+    
+    experimentalPromptCommand: true,
+  
     baseUrl: 'https://demoqa.com/login',
     specPattern: 'cypress/e2e/**/*.{js,jsx,ts,tsx}',
     supportFile: 'cypress/support/e2e.{js,jsx,ts,tsx}'
